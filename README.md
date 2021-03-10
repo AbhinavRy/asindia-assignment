@@ -13,4 +13,16 @@
  - Lastly, the missing number is returned to print it on the console.
 
 ## Task 2
- ### To run
+ ### To run the webpages which are in folder named 'webpages':
+ - The copy of this task's project is here on this link: https://codesandbox.io/s/eloquent-sanderson-8td3s 
+ - For the ease of running the webpages without any setup on local system use the link above.
+ - Or to run on local system:
+    - Use vs-code with nodejs intalled in the system.
+    - Open a new terminal and navigate to the webpages folder then run "npm start" command then the webpage will open in the browser.
+ ### Solution:
+ - The Login page takes email and password as credentials, at the moment any random email-password pair can be entered to log in.
+ - The movielist page at the top contains a slider with top rated movies, the slider can be slided with the Next and Prev 
+    buttons at the top corners to slide through the movie list slider.
+ - After the top slider, there is the section where user can see the average rating and other users' comment and also comment themself.
+ - Each movie card or row contain an image, average rating, write a comment button, synopsis, other users' comment and their rating.
+ - The Write a Comment button hide the synopsis and expose a form to rate by stars and write a comment on a movie.
