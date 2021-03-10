@@ -23,13 +23,13 @@ const Login = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><FontAwesomeIcon icon={faUser}/></span>
                                 </div>
-                                <input type="email" onChange={handleChange} className="form-control" placeholder="Enter Email"/>
+                                <input type="email" onChange={handleChange} className="form-control" placeholder="Enter Email" required/>
                             </div>
                             <div className="input-group form-group">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><FontAwesomeIcon icon={faKey}/></span>
                                 </div>
-                                <input type="password" className="form-control" placeholder="Enter Password"/>
+                                <input type="password" className="form-control" placeholder="Enter Password" required/>
                             </div>
                             <div class="form-group">
 						        <input type="checkbox" /><span className="user-select-none">Remember Me</span>
