@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { faUser, faKey } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// const useStateWithLocalStorage = localStorageKey => {
+//     const [username, setUsername] = useState(
+//       localStorage.getItem(localStorageKey) || ''
+//     );
+   
+//     useEffect(() => {
+//       localStorage.setItem(localStorageKey, username);
+//     }, [username]);
+   
+//     return [username, setUsername];
+// };
+
 const Login = () => {
+    // const [username, setUsername] = useState("");
     const [username, setUsername] = useState("");
 
     const handleChange = (event) => {
-        setUsername(event.target.value)
+        setUsername(event.target.value);
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        localStorage.setItem('currentUser', username);
+    }
 
     return (
         <div className="container">
@@ -18,7 +36,7 @@ const Login = () => {
                         <h3 className="user-select-none">Login</h3>
                     </div>
                     <div className="card-body">
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="input-group form-group">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><FontAwesomeIcon icon={faUser}/></span>

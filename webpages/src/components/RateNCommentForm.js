@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import ReactStars from 'react-rating-stars-component';
-import { useLocation } from 'react-router-dom';
 
 const RateNCommentForm = () => {
     const [rate, setRating] = useState("1");
     const [commentText, setCommentText] = useState("");
     const [obj, setObj] = useState({user:"", rating:"", comment:""})
-    let location = useLocation();
+    var currentUser = localStorage.getItem('currentUser');
+    console.log(currentUser);
 
     const ratingChanged = (newRating) => {
         setRating(newRating);
@@ -20,18 +20,20 @@ const RateNCommentForm = () => {
         e.preventDefault();
          setObj(obj =>({
             ...obj,
-            user:location.state,
+            user: currentUser,
             rating:rate,
             comment:commentText
         }));
+        var newObj = JSON.stringify(obj);
+        localStorage.setItem(`${currentUser}'s userComment`, newObj);
+        var commentObj = JSON.parse(localStorage.getItem(`${currentUser}'s userComment`));
+        console.log(commentObj);
     };
-
-    console.log(obj);
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <p className="p-2">Username: {location.state}</p>
+                <p className="p-2">Username: {currentUser}</p>
                 <div className="input-group form-group">
                     <h6 className="p-2">Rate the movie:</h6>
                     <ReactStars
