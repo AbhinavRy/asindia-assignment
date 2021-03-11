@@ -14,7 +14,8 @@
 
 ## Task 2
  ### To run the webpages which are in folder named 'webpages':
- - The copy of this task's project is here on this link: https://codesandbox.io/s/eloquent-sanderson-8td3s 
+ - The copy of this task's project is here on this link: https://codesandbox.io/s/eloquent-sanderson-8td3s, once the page load completely the webpages can be seen at large by
+   open in new window icon at the right upper corner. 
  - For the ease of running the webpages without any setup on local system use the link above.
  - Or to run on local system:
     - Use vs-code with nodejs intalled in the system.
