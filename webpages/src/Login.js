@@ -1,19 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { faUser, faKey } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// const useStateWithLocalStorage = localStorageKey => {
-//     const [username, setUsername] = useState(
-//       localStorage.getItem(localStorageKey) || ''
-//     );
-   
-//     useEffect(() => {
-//       localStorage.setItem(localStorageKey, username);
-//     }, [username]);
-   
-//     return [username, setUsername];
-// };
 
 const Login = () => {
     // const [username, setUsername] = useState("");
