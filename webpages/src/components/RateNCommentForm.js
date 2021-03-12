@@ -6,7 +6,6 @@ const RateNCommentForm = () => {
     const [commentText, setCommentText] = useState("");
     const [obj, setObj] = useState({user:"", rating:"", comment:""});
     var currentUser = localStorage.getItem('currentUser');
-    // console.log(currentUser);
 
     const ratingChanged = (newRating) => {
         setRating(newRating);

@@ -24,7 +24,6 @@ const Movies = () => {
     const handleNextMovie = () => {
         const newId = movie.id+1;
         setMovie(movieList[newId]);
-        console.log(movie);
     };
     
     return (
@@ -32,10 +31,10 @@ const Movies = () => {
             <h1 className="p-3">TOP RATED MOVIES:</h1>
             <div style={{width:"100%",height:"5px",background:"#EA2027"}}></div>
             <div className="d-flex mb-3">
-                <button className="btn btn-outline-warning mr-auto p-2 bd-highlight" onClick={handlePrevMovie} disabled={movie.id === 0} >
+                <button className="btn btn-outline-warning mr-auto p-2" onClick={handlePrevMovie} disabled={movie.id === 0} >
                     Prev
                 </button>
-                <button className="btn btn-outline-warning ml-auto p-2 bd-highlight" onClick={handleNextMovie} disabled={movie.id === 9}>
+                <button className="btn btn-outline-warning ml-auto p-2" onClick={handleNextMovie} disabled={movie.id === 9}>
                     Next
                 </button>
             </div>

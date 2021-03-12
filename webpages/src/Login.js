@@ -17,9 +17,6 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        localStorage.setItem('currentUser', username);
-        var current = localStorage.getItem('currentUser');
-        console.log(current);
         history.push('/movielist');
     }
 
@@ -48,9 +45,7 @@ const Login = () => {
 						        <input type="checkbox" /><span className="user-select-none">Remember Me</span>
 					        </div>
                             <div className="form-group d-flex justify-content-center">
-                                {/* <Link to={{pathname:'/movielist',state:username}} style={{ textDecoration: 'none' }}> */}
                                 <input type="submit" value="Login" className="btn" style={{backgroundColor:"#eccc68"}} onClick={handleClick}/>
-                                {/* </Link> */}
                             </div>
                         </form>
                     </div>
