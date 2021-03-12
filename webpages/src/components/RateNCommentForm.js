@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactStars from 'react-rating-stars-component';
 
 const RateNCommentForm = () => {
     const [rate, setRating] = useState("1");
     const [commentText, setCommentText] = useState("");
-    const [obj, setObj] = useState({user:"", rating:"", comment:""})
+    const [obj, setObj] = useState({user:"", rating:"", comment:""});
     var currentUser = localStorage.getItem('currentUser');
-    console.log(currentUser);
+    // console.log(currentUser);
 
     const ratingChanged = (newRating) => {
         setRating(newRating);
@@ -18,17 +18,20 @@ const RateNCommentForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-         setObj(obj =>({
-            ...obj,
+         setObj({
             user: currentUser,
             rating:rate,
             comment:commentText
-        }));
-        var newObj = JSON.stringify(obj);
-        localStorage.setItem(`${currentUser}'s userComment`, newObj);
-        var commentObj = JSON.parse(localStorage.getItem(`${currentUser}'s userComment`));
-        console.log(commentObj);
+        });
+        
     };
+
+    useEffect(() => {
+        var newObj = JSON.stringify(obj);
+        localStorage.setItem(`userComment`, newObj);
+        var commentObj = JSON.parse(localStorage.getItem(`userComment`));
+        console.log(commentObj);
+    }, [obj])
 
     return (
         <div>

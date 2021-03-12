@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { faUser, faKey } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Login = () => {
-    // const [username, setUsername] = useState("");
     const [username, setUsername] = useState("");
+    let history = useHistory();
 
     const handleChange = (event) => {
         setUsername(event.target.value);
     };
 
+    const handleClick = () => {
+        localStorage.setItem('currentUser', username);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         localStorage.setItem('currentUser', username);
+        var current = localStorage.getItem('currentUser');
+        console.log(current);
+        history.push('/movielist');
     }
 
     return (
@@ -41,9 +48,9 @@ const Login = () => {
 						        <input type="checkbox" /><span className="user-select-none">Remember Me</span>
 					        </div>
                             <div className="form-group d-flex justify-content-center">
-                                <Link to={{pathname:'/movielist',state:username}} style={{ textDecoration: 'none' }}>
-                                <input type="submit" value="Login" className="btn" style={{backgroundColor:"#eccc68"}}/>
-                                </Link>
+                                {/* <Link to={{pathname:'/movielist',state:username}} style={{ textDecoration: 'none' }}> */}
+                                <input type="submit" value="Login" className="btn" style={{backgroundColor:"#eccc68"}} onClick={handleClick}/>
+                                {/* </Link> */}
                             </div>
                         </form>
                     </div>
